@@ -38,7 +38,7 @@ class User(db.Model):
             "personal_phone": self.personal_phone,
             "user_since": self.since,
             "user_status": self.status, 
-            "country": self.country.name
+            "country": self.country.name if self.country is not None else None
         }
 
     def serialize_private(self):
